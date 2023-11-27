@@ -42,8 +42,9 @@ def get_or_build_tokenizer(config, dataset, language):
     
     return tokenizer
 
+# dataset_name refers to the dataset name on hugging face
 def get_dataset(config):
-    dataset_raw = load_dataset('opus100', f'{config.lang_src}-{config.lang_tgt}', split='train[:30000]')
+    dataset_raw = load_dataset(config.dataset_name, f'{config.lang_src}-{config.lang_tgt}', split='train[:30000]')
 
     tokenizer_src = get_or_build_tokenizer(config, dataset_raw, config.lang_src)
     tokenizer_tgt = get_or_build_tokenizer(config, dataset_raw, config.lang_tgt)

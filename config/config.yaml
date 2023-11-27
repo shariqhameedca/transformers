@@ -1,8 +1,9 @@
 transformer:
+  dataset_name: opus100
   batch_size: 8
   num_epochs: 20
   lr: 0.0001
-  seq_len: 319
+  seq_len: 256
   d_model: 512
   lang_src: en
   lang_tgt: ur
